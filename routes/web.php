@@ -11,7 +11,7 @@ Route::post('/register', 'Auth\RegisterController@register') -> name('register')
 Route::get('/logout', 'Auth\LoginController@logout') -> name('logout');
 
 // view post
-Route::get('/view', 'MyController@viewPost') -> name('view');
+Route::get('/show', 'MyController@showPost') -> name('show');
 
 Route::get('/post/create', 'HomeController@create') -> name('create');
 Route::post('/post/store', 'HomeController@store') -> name('store');

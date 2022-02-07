@@ -17,6 +17,12 @@
     <label for="content">content</label>
     <input type="text" name="content" placeholder="content"><br>
 
+    <select name="category_id">
+        @foreach ($categories as $category)
+            <option value="{{ $category -> id }}">{{ $category -> name  }}</option>
+        @endforeach
+    </select>
+
     <input type="submit" value="CREATE">
 </form>
 

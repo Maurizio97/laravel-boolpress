@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Post;
+use App\Category;
 class HomeController extends Controller
 {
     /**
@@ -17,7 +18,8 @@ class HomeController extends Controller
     }
 
     public function create(){
-        return view('pages.create');
+        $categories = Category::all();
+        return view('pages.create', compact('categories'));
     }
 
     public function store(Request $request){
@@ -25,9 +27,11 @@ class HomeController extends Controller
             'title' => 'required|max:40|string',
             'author' => 'required|max:40|string',
             'content' => 'required|string',
+            'category_id' => 'required'
         ]);
 
         Post::create($data);
-        return redirect() -> route('view');
+
+        return redirect() -> route('show');
     }
 }

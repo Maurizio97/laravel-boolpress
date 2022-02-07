@@ -12,8 +12,8 @@ class MyController extends Controller
         return view('pages.home');
     }
 
-    public function viewPost(){
+    public function showPost(){
         $posts = Post::all();
-        return view('pages.view', compact('posts'));
+        return view('pages.show', compact('posts'));
     }
 }

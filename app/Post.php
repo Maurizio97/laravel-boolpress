@@ -10,7 +10,10 @@ class Post extends Model
         'title',
         'author',
         'content',
+        'category_id',
     ];
     
-
+    public function category(){
+        return $this -> beLongsTo(Category::class);
+    }
 }

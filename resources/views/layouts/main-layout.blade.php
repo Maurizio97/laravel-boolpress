@@ -14,9 +14,18 @@
         {{-- <example-component></example-component> --}}
         @auth
         <a href="{{ route('home') }}" class="btn btn-primary">HOME</a>
-        <a href="{{ route('view') }}" class="btn btn-primary">VIEW</a>
+        <a href="{{ route('show') }}" class="btn btn-primary">SHOW</a>
         <a href="{{ route('create') }}" class="btn btn-primary">CREATE</a>
         @endauth
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
         @yield('content')
     </div>
