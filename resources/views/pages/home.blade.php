@@ -3,7 +3,7 @@
 
 @auth
         <h1>{{ Auth::user() -> name }}</h1>
-        <a class="btn btn-secondary" href="{{ route('logout') }}">LOGOUT</a>
+        <a class="btn btn-secondary" href="{{ route('logout') }}">LOGOUT</a><br>
         <br><br>
         @else
         <h1>If you wanne see my site you have to login/register</h1>

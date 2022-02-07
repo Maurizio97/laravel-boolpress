@@ -21,6 +21,14 @@ Route::post('/register', 'Auth\RegisterController@register') -> name('register')
 
 Route::get('/logout', 'Auth\LoginController@logout') -> name('logout');
 
+// view post
+Route::get('/view', 'MyController@viewPost') -> name('view');
+
+Route::get('/post/create', 'MyController@create') -> name('create');
+Route::post('/post/store', 'MyController@store') -> name('store');
+
+
+
 // Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
