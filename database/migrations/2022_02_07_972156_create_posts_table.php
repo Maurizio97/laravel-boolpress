@@ -13,15 +13,18 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('posts');
         Schema::create('posts', function (Blueprint $table) {
             $table -> id();
             
             $table -> string('title', 50);
             $table -> string('author', 40);
             $table -> longText('content');
-            $table -> bigInteger('category_id') -> unsigned();
+            $table -> unsignedBigInteger('category_id');
 
             $table -> timestamps();
+
+            $table -> foreign('category_id') -> references('id') -> on('categories'); 
         });
     }
 

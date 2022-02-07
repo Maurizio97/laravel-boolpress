@@ -10,5 +10,7 @@ $factory->define(Post::class, function (Faker $faker) {
         'title' => $faker -> words(4, true),
         'author' => $faker -> name(),
         'content' => $faker -> text(),
+        'category_id' => $faker -> numberBetween(1,10)
     ];
+
 });

@@ -13,15 +13,16 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('categories');
         Schema::create('categories', function (Blueprint $table) {
             $table -> id();
 
-            $table -> string('category');
+            $table -> string('name');
 
             $table -> timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *
