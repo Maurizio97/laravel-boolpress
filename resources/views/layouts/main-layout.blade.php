@@ -12,9 +12,11 @@
 <body>
     <div id="app">
         {{-- <example-component></example-component> --}}
+        @auth
         <a href="{{ route('home') }}" class="btn btn-primary">HOME</a>
         <a href="{{ route('view') }}" class="btn btn-primary">VIEW</a>
         <a href="{{ route('create') }}" class="btn btn-primary">CREATE</a>
+        @endauth
 
         @yield('content')
     </div>
