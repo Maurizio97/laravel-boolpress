@@ -16,10 +16,7 @@ class CreateCategoriesTable extends Migration
         Schema::dropIfExists('categories');
         Schema::create('categories', function (Blueprint $table) {
             $table -> id();
-
             $table -> string('name');
-
-            $table -> timestamps();
         });
     }
     
