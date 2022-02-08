@@ -27,10 +27,16 @@ class HomeController extends Controller
             'title' => 'required|max:40|string',
             'author' => 'required|max:40|string',
             'content' => 'required|string',
-            'category_id' => 'required'
         ]);
 
-        Post::create($data);
+        $post = Post::make($data);
+        $category = Category::findOrFail($request -> get('category'));
+        $post -> category() -> associate($category);
+
+        $post -> save();
+
+        
+
 
         return redirect() -> route('show');
     }

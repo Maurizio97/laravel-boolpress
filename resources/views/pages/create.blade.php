@@ -17,7 +17,7 @@
     <label for="content">content</label>
     <input type="text" name="content" placeholder="content"><br>
 
-    <select name="category_id">
+    <select name="category">
         @foreach ($categories as $category)
             <option value="{{ $category -> id }}">{{ $category -> name  }}</option>
         @endforeach
