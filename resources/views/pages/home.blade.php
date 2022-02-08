@@ -15,9 +15,9 @@
     @method('POST')
     @csrf
 
-    <label for="email">Email</label>
+    <label for="email">Email</label><br>
     <input type="email" name="email" placeholder="email"><br>
-    <label for="password">password</label>
+    <label for="password">password</label><br>
     <input type="password" name="password" placeholder="password"><br>
     <input type="submit" value="Login">
 </form>
@@ -31,13 +31,13 @@
     @method('POST')
     @csrf
     
-    <label for="name">Name</label>
+    <label for="name">Name</label><br>
     <input type="text" name="name" placeholder="name"><br>
-    <label for="email">Email</label>
+    <label for="email">Email</label><br>
     <input type="email" name="email" placeholder="email"><br>
-    <label for="password">password</label>
+    <label for="password">password</label><br>
     <input type="password" name="password" placeholder="password"><br>
-    <label for="password_confirmation">Password Confirmation</label>
+    <label for="password_confirmation">Password Confirmation</label><br>
     <input type="password_confirmation" name="password_confirmation" placeholder="password confirmation"><br>
     <input type="submit" value="Login">
 </form>

@@ -8,14 +8,14 @@
     @method('POST')
     @csrf
 
-    <label for="title"></label>
+    <label for="title">Title</label><br>
     <input type="text" name="title" placeholder="title"><br>
 
-    <label for="author">author</label>
+    <label for="author">Author</label><br>
     <input type="text" name="author" placeholder="author"><br>
 
-    <label for="content">content</label>
-    <input type="text" name="content" placeholder="content"><br>
+    <label for="content">Content</label><br>
+    <input type="text" name="content" placeholder="content"><br><br>
 
     <select name="category">
         @foreach ($categories as $category)

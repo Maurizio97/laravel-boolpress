@@ -13,9 +13,11 @@
     <div id="app">
         {{-- <example-component></example-component> --}}
         @auth
-        <a href="{{ route('home') }}" class="btn btn-primary">HOME</a>
-        <a href="{{ route('show') }}" class="btn btn-primary">SHOW</a>
-        <a href="{{ route('create') }}" class="btn btn-primary">CREATE</a>
+        <div class="my-3">
+            <a href="{{ route('home') }}" class="btn btn-primary">HOME</a>
+            <a href="{{ route('show') }}" class="btn btn-primary">SHOW</a>
+            <a href="{{ route('create') }}" class="btn btn-primary">CREATE</a>
+        </div>
         @endauth
         @if ($errors->any())
         <div class="alert alert-danger">
