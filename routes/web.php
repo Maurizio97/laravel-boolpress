@@ -13,8 +13,11 @@ Route::get('/logout', 'Auth\LoginController@logout') -> name('logout');
 // view post
 Route::get('/show', 'MyController@showPost') -> name('show');
 
-Route::get('/post/create', 'HomeController@create') -> name('create');
-Route::post('/post/store', 'HomeController@store') -> name('store');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/post/create', 'PostController@create') -> name('create');
+    Route::post('/post/store', 'PostController@store') -> name('store');
+});
 
 
 

@@ -18,6 +18,7 @@ class PostSeeder extends Seeder
             $category = Category::inRandomOrder() -> limit(1) -> first();
 
             $post -> category() -> associate($category);
+            
             $post -> save();
         });
     }
