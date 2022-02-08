@@ -14,9 +14,9 @@ Route::get('/logout', 'Auth\LoginController@logout') -> name('logout');
 Route::get('/show', 'MyController@showPost') -> name('show');
 
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/post/create', 'PostController@create') -> name('create');
-    Route::post('/post/store', 'PostController@store') -> name('store');
+Route::middleware(['auth'])->prefix('post')->group(function () {
+    Route::get('/create', 'PostController@create') -> name('create');
+    Route::post('/store', 'PostController@store') -> name('store');
 });
 
 
