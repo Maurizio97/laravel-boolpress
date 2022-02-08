@@ -16,4 +16,8 @@ class Post extends Model
     public function category(){
         return $this -> beLongsTo(Category::class);
     }
+
+    public function tags() {
+        return $this -> beLogsToMany(Tag::class);
+    }
 }
