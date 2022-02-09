@@ -8,6 +8,7 @@
         <th>Author</th>
         <th>Content</th>
         <th>Category_id</th>
+        <th>Tag</th>
         <th>Created_at</th>
       </tr>
       @foreach ($posts as $post)
@@ -26,6 +27,11 @@
                 </td>
                 <td>
                     {{ $post -> category_id }}
+                </td>
+                <td>
+                    @foreach ($post -> tags as $tag)
+                    {{ $tag -> name }}
+                    @endforeach
                 </td>
                 <td>
                     {{ $post -> created_at }}

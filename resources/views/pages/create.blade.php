@@ -17,11 +17,18 @@
     <label for="content">Content</label><br>
     <input type="text" name="content" placeholder="content"><br><br>
 
+    @foreach ($tags as $tag)
+        <input type="checkbox"  name="tag[]" value="{{ $tag -> id }}">
+        <label for="tag">{{ $tag -> name }}</label><br>
+    @endforeach
+
     <select name="category">
         @foreach ($categories as $category)
             <option value="{{ $category -> id }}">{{ $category -> name  }}</option>
         @endforeach
     </select>
+
+    
 
     <input type="submit" value="CREATE">
 </form>

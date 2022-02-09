@@ -30,6 +30,7 @@ class AddForeignKey extends Migration
         });
 
 
+
     }
 
     /**

@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Category;
+use App\Tag;
 
 class PostController extends Controller
 {
     public function create(){
         $categories = Category::all();
-        return view('pages.create', compact('categories'));
+        $tags = Tag::all();
+        return view('pages.create', compact('categories', 'tags'));
     }
 
     public function store(Request $request){
@@ -24,6 +26,10 @@ class PostController extends Controller
         $category = Category::findOrFail($request -> get('category'));
         $post -> category() -> associate($category);
 
+        $post -> save();
+
+        $tag = Tag::findOrFail($request -> get('tag'));
+        $post -> tags() -> attach($tag);
         $post -> save();
 
         return redirect() -> route('show');

@@ -18,6 +18,6 @@ class Post extends Model
     }
 
     public function tags() {
-        return $this -> beLogsToMany(Tag::class);
+        return $this -> belongsToMany(Tag::class);
     }
 }
