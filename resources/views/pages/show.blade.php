@@ -38,7 +38,7 @@
                     {{ $post -> created_at }}
                 </td>
                 <td>
-                    <a class="btn btn-secondary my-2" href="#">EDIT</a>
+                    <a class="btn btn-secondary my-2" href="{{ route('edit', $post -> id) }}">EDIT</a>
                     <a class="btn btn-danger my-2" href="{{ route('delete', $post -> id) }}">DELETE</a>
                 </td>
           </tr>
