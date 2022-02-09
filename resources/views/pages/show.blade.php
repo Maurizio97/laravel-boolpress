@@ -10,6 +10,7 @@
         <th>Category_id</th>
         <th>Tag</th>
         <th>Created_at</th>
+        <th>Action</th>
       </tr>
       @foreach ($posts as $post)
           <tr>
@@ -35,6 +36,10 @@
                 </td>
                 <td>
                     {{ $post -> created_at }}
+                </td>
+                <td>
+                    <a class="btn btn-secondary my-2" href="#">EDIT</a>
+                    <a class="btn btn-danger my-2" href="{{ route('delete', $post -> id) }}">DELETE</a>
                 </td>
           </tr>
       @endforeach

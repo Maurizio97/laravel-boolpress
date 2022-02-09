@@ -34,4 +34,14 @@ class PostController extends Controller
 
         return redirect() -> route('show');
     }
+
+    public function delete($id){
+        $post = Post::findOrFail($id);
+        $post -> tags() -> sync([]);
+        $post -> save();
+
+        $post -> delete();
+
+        return redirect() -> route('show');
+    }
 }
